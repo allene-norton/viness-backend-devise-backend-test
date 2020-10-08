@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :users_wines
+  has_many :wines, through: :users_wines
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
