@@ -8,6 +8,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         else
             session["devise.google_data"] = request.env["omniauth.auth"]
         end
+        # puts current_user.first_name
         redirect_to 'http://localhost:3001/home'
     end
 end
